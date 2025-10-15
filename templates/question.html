@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz Challenge</title>
+    <link rel="stylesheet" href="/QUIZZING GAME/static/style.css"/>
+</head>
+<body class="body2">
+    <div class="container" id="quiz-container">
+        <div id="quiz-screen">
+            <p class="status" id="question-status"></p>
+            <h2 class="question-text" id="question-text"></h2>
+            <form id="quiz-form">
+                <div id="options-container">
+                </div>
+                <button type="submit" class="btn submit" id="submit-btn">Submit Answer</button>
+            </form>
+        </div>
+        <div id="results-screen" style="display: none;">
+            <h2>Quiz Complete!</h2>
+            <p id="final-score"></p>
+            <button class="btn submit" onclick="startQuiz()">Try Again</button>
+        </div>
+    </div>
+    <script src="/QUIZZING GAME/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+#choice {
+  /* Enables grid context */
+    display: grid; 
+    /* Creates 4 equal columns */
+    grid-template-rows: repeat(3, 1fr); 
+    grid-template-columns: 100px auto;
+    column-gap: 200px; 
+    row-gap: 20px;    
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-style: italic;
+    color: white;
+    text-align: center;
+}
+
+.body1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 100px;
+    height: 300px;
+}
+
+h1{
+    color: rgb(13, 13, 14);
+    font-size: 2cm;
+}
+
+p{
+    font: 1.5em sans-serif;
+}
+
+.butn{
+    border-radius: 15px;
+    background-color:None;
+    color: whitesmoke;
+    font-size: xx-large;
+    transition: all 0.3s ease-in;
+    padding : 20px 30px;
+    height: 2cm;
+    cursor: pointer;
+    box-shadow: 0 4px 8px gray;
+}
+
+.butn:hover{
+    background-color: white;
+    color: #008080;
+    border-color: #008080;
+}
+
+.body2{
+    /* Sets the default font, clean background, and ensures content fills the screen */
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6; /* Light gray background */
+    color: #333; /* Dark gray text for readability */
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 50px;
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+.container {
+    background-color: #ffffff; /* White card background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 40px;
+    width: 90%;
+    max-width: 600px; /* Limits the width for better readability on large screens */
+    text-align: left; /* Aligns text within the container to the left */
+}
+
+/* --- Question Status and Text --- */
+.status {
+    /* Styles for "Question 3 of 5" */
+    font-size: 1em;
+    color: #666; /* Slightly darker gray */
+    margin-bottom: 20px;
+    text-align: left; /* Places the status in the top right */
+}
+
+.question-text {
+    /* Styles for the main question text */
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #1C2833; /* A strong, deep color for emphasis */
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* --- Option Container (Individual Answer Choice Block) --- */
+.option-container {
+    /* Styles the box/area containing the radio button and label */
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd; /* Light border */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.option-container:hover {
+    /* Hover effect for a better user experience */
+    background-color: #e6f7ff; /* Very light blue background on hover */
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* --- Radio Button & Label Styling --- */
+
+/* Style the label text */
+.option-container label {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 15px; /* Spacing between the radio button and text */
+    cursor: pointer;
+    flex-grow: 1; /* Allows the label to take up remaining space */
+}
+
+/* Style the actual radio button */
+.option-container input[type="radio"] {
+    /* Default size and appearance */
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff; /* Changes the default blue highlight color */
+    margin: 0;
+}
+
+/* Add a focus state to improve accessibility */
+.option-container input[type="radio"]:focus + label {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Highlight the selected option */
+.option-container input[type="radio"]:checked {
+    /* Ensure the container reflects the checked state */
+    border-color: #007bff;
+}
+
+/* Highlight the container when its radio button is checked */
+.option-container input[type="radio"]:checked ~ label {
+    color: #007bff; /* Change text color for selected option */
+}
+
+.btn{
+    /* Centering logic */
+    display: block; /* Makes the button take up the full width available */
+    margin: 30px auto 10px auto; /* Centers the button horizontally (auto), adds margin around it */
+    width: fit-content; /* Optional: Constrain width to content instead of 100% of container */
+    
+    /* User's styles adapted */
+    border-radius: 20px;
+    background-color: #008080;
+    color: #ffffff;
+    font-size: 1.5rem; /* Large, responsive font size */
+    font-weight: bold;
+    border: 2px solid #008080; /* Added explicit border for hover effect */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    padding : 15px 40px; /* Generous padding */
+    cursor: pointer;
+    box-shadow: 0 4px 8px gray;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #008080;
+    border-color: #008080;
+}
