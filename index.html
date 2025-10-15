@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Start</title>
-        <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body class="body1">
-        <div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz Challenge</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="body1">
+    <div class="container" id="quiz-app-container">
+
+        <div id="start-screen">
             <h1>Quiz Challenge</h1><br>
             <p>Test your knowledge with 5 quick questions</p><br><br>
-            <button class="butn Start">
-                <a href="question.html" target="_parent">Start Quiz</a>
+            <button class="butn Start" onclick="startQuiz()">
+                Start Quiz
             </button>
         </div>
-    </body>
+
+        <div id="quiz-screen" style="display: none;">
+            <p class="status" id="question-status"></p>
+            <h2 class="question-text" id="question-text"></h2>
+            <form id="quiz-form">
+                <div id="options-container">
+                    </div>
+                <button type="submit" class="btn submit" id="submit-btn">Submit Answer</button>
+            </form>
+        </div>
+
+        <div id="results-screen" style="display: none;">
+            <h2>Quiz Complete!</h2>
+            <p id="final-score"></p>
+            <button class="btn submit" onclick="startQuiz()">Try Again</button>
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>

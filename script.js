@@ -1,5 +1,5 @@
-// --- 1. DATA STRUCTURE ---
-const QUIZ_QUESTIONS =[
+// --- 1. DATA STRUCTURE (No change needed here) ---
+const QUIZ_QUESTIONS = [
     {
         "id": 1,
         "question": "What is the largest organ in the human body?",
@@ -32,12 +32,13 @@ const QUIZ_QUESTIONS =[
     }
 ];
 
-// --- 2. STATE VARIABLES ---
+// --- 2. STATE VARIABLES (No change needed here) ---
 let currentQuestionIndex = 0;
 let score = 0;
 const totalQuestions = QUIZ_QUESTIONS.length;
 
-// --- 3. DOM REFERENCES ---
+// --- 3. DOM REFERENCES (Updated to include the start screen) ---
+const startScreen = document.getElementById('start-screen'); // <-- NEW
 const quizScreen = document.getElementById('quiz-screen');
 const resultsScreen = document.getElementById('results-screen');
 const statusElement = document.getElementById('question-status');
@@ -51,12 +52,17 @@ const quizForm = document.getElementById('quiz-form');
 
 /**
  * Initializes or resets the quiz state and starts the game.
+ * It also manages screen visibility.
  */
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+    
+    // Manage screen visibility: Hide start/results, show quiz
+    startScreen.style.display = 'none';    // <-- Hides the start screen
     quizScreen.style.display = 'block';
     resultsScreen.style.display = 'none';
+    
     loadQuestion();
 }
 
@@ -102,7 +108,8 @@ function checkAnswer(event) {
     const selectedAnswer = formData.get('option');
 
     if (!selectedAnswer) {
-        // Simple console message if no option is selected
+        // In a real application, you'd show an alert or a message on the page.
+        // For now, let's just log and return.
         console.log("Please select an answer.");
         return;
     }
@@ -126,14 +133,28 @@ function showResults() {
     quizScreen.style.display = 'none';
     resultsScreen.style.display = 'block';
     finalScoreElement.textContent = `You scored ${score} out of ${totalQuestions}.`;
-    
 }
 
 
-// --- 5. INITIALIZATION ---
+// --- 5. INITIALIZATION (Updated) ---
 
 // Attach the event listener to the form submission
 quizForm.addEventListener('submit', checkAnswer);
 
-// Start the quiz when the page loads
-document.addEventListener('DOMContentLoaded', startQuiz);
+// IMPORTANT CHANGE: 
+// We remove the document.addEventListener('DOMContentLoaded', startQuiz);
+// The quiz will now only start when the user clicks the 'Start Quiz' button, 
+// which calls the startQuiz() function directly from the HTML's onclick attribute.
+
+/**
+ * Initial setup to ensure only the start screen is visible when the page loads.
+ * This is technically redundant if the combined HTML already hides 'quiz-screen' and 'results-screen',
+ * but it's good practice for clarity.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure the quiz and results screens are hidden initially
+    if (quizScreen) quizScreen.style.display = 'none';
+    if (resultsScreen) resultsScreen.style.display = 'none';
+    // Ensure the start screen is visible initially
+    if (startScreen) startScreen.style.display = 'block';
+});
