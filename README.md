@@ -1,61 +1,59 @@
-Quiz Challenge: Single-Page Web App
-📝 Overview
+# Quiz Challenge: Single-Page Web App
+
+## 📝 Overview
+
 This project is a simple, five-question trivia quiz built using pure HTML, CSS, and JavaScript. The application is implemented as a single HTML page with dynamic content switching, eliminating the need for separate navigation pages.
 
 The quiz tests general knowledge and provides immediate feedback on the final score.
 
-✨ Features
-Single-Page Application (SPA) Flow: Seamless transition between the Start Screen, Quiz Screen, and Results Screen without refreshing the page.
+## ✨ Features
 
-Dynamic Question Loading: JavaScript loads questions and generates answer options dynamically from a structured data array.
+* **Single-Page Application (SPA) Flow:** Seamless transition between the Start Screen, Quiz Screen, and Results Screen without refreshing the page.
 
-Score Tracking: The user's score is updated instantly upon submission of each answer.
+* **Dynamic Question Loading:** JavaScript loads questions and generates answer options dynamically from a structured data array.
 
-Responsive Layout: Designed to look good on various screen sizes (assuming basic Tailwind or flexible CSS is applied).
+* **Score Tracking:** The user's score is updated instantly upon submission of each answer.
 
-Replayability: A "Try Again" button on the results screen resets the game state and relaunches the quiz.
+* **Responsive Layout:** Designed to look good on various screen sizes (assuming basic Tailwind or flexible CSS is applied).
 
-🚀 Setup and Running the Application
+* **Replayability:** A "Try Again" button on the results screen resets the game state and relaunches the quiz.
+
+## 🚀 Setup and Running the Application
+
 Since this is a client-side application with no backend dependencies, setting up the quiz is very straightforward.
 
-Prerequisites
+### Prerequisites
+
 You only need a modern web browser (Chrome, Firefox, Safari, Edge, etc.).
 
-Steps to Run
-Save the files: Ensure you have the following two files saved in the same directory:
+### Steps to Run
 
-index.html (The combined HTML structure)
+1. **Save the files:** Ensure you have the following two files saved in the same directory:
 
-script.js (The core quiz logic)
+   * `index.html` (The combined HTML structure)
 
-style.css (Your custom styles)
+   * `script.js` (The core quiz logic)
 
-Open in Browser: Simply double-click on the index.html file. It will automatically open in your default web browser.
+   * `style.css` (Your custom styles)
 
-📂 Project Structure
-File Name
+2. **Open in Browser:** Simply double-click on the `index.html` file. It will automatically open in your default web browser.
 
-Description
+## 📂 Project Structure
 
-index.html
+| File Name | Description | 
+ | ----- | ----- | 
+| **`index.html`** | The main and only HTML file. It contains the structures for the Start Screen, the Quiz Screen, and the Results Screen, which are toggled by JavaScript. | 
+| **`script.js`** | Contains the quiz data (`QUIZ_QUESTIONS`), state management, DOM manipulation, and the core functions (`startQuiz`, `loadQuestion`, `checkAnswer`, `showResults`) that drive the application logic. | 
+| **`style.css`** | (Expected) Contains the styling for the application, defining colors, layout, and responsiveness. | 
 
-The main and only HTML file. It contains the structures for the Start Screen, the Quiz Screen, and the Results Screen, which are toggled by JavaScript.
+## 🕹️ How to Play
 
-script.js
+1. **Start:** Click the **Start Quiz** button on the initial screen.
 
-Contains the quiz data (QUIZ_QUESTIONS), state management, DOM manipulation, and the core functions (startQuiz, loadQuestion, checkAnswer, showResults) that drive the application logic.
+2. **Answer:** Select one radio button option for the current question.
 
-style.css
+3. **Submit:** Click **Submit Answer** to check your choice and advance to the next question.
 
-(Expected) Contains the styling for the application, defining colors, layout, and responsiveness.
+4. **Results:** Once all 5 questions are answered, the Results Screen will appear, showing your final score.
 
-🕹️ How to Play
-Start: Click the Start Quiz button on the initial screen.
-
-Answer: Select one radio button option for the current question.
-
-Submit: Click Submit Answer to check your choice and advance to the next question.
-
-Results: Once all 5 questions are answered, the Results Screen will appear, showing your final score.
-
-Replay: Click Try Again to reset the game and start from the first question.
+5. **Replay:** Click **Try Again** to reset the game and start from the first question.
