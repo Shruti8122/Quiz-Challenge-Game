@@ -19,7 +19,7 @@
     justify-content: center;
     text-align: center;
     padding: 100px 100px;
-    height: 300px;
+    height: 550px;
 }
 
 h1{
@@ -33,8 +33,8 @@ p{
 
 .butn{
     border-radius: 15px;
-    background-color:None;
-    color: whitesmoke;
+    background-color:#008080;
+    color: #ffffff;
     font-size: xx-large;
     transition: all 0.3s ease-in;
     padding : 20px 30px;
